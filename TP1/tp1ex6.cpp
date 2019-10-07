@@ -6,12 +6,20 @@
 #include<iostream>
 #include<vector>
 #include<numeric>
+#include "chrono.hpp"
 
 namespace TP_CPP_IMAC2
 {
 
 	float mean(const std::vector<int> &array){
-		int sum = std::accumulate(array.begin(), array.end(), 0);
+		long int sum = std::accumulate(array.begin(), array.end(), 0);
+
+		return (float)sum/(float)array.size();
+
+	}
+
+	float meanCopy(const std::vector<int> array){
+		long int sum = std::accumulate(array.begin(), array.end(), 0);
 
 		return (float)sum/(float)array.size();
 
@@ -21,26 +29,32 @@ namespace TP_CPP_IMAC2
 	{
 		std::vector<int> intVect;
 		unsigned int taille;
-		int elt;
 
 		std::cout << "Taille : " << std::endl;
 		std::cin >> taille;
-		std::cout << "Entrez " << taille << " elements :" << std::endl;
 		for(unsigned int i=0; i< taille; i++){
-			std::cin >> elt;
-
-			intVect.push_back(elt%10);
+			intVect.push_back(i%10);
 		}
 
 		std::cout << "La taille du vecteur est maintenant : " << intVect.size() << std::endl;
 		std::cout << "L'adresse mémoire des trois premiers éléments est : " << &intVect[0] << " " << &intVect[1] << " et " << &intVect[2] << std::endl;
 		std::cout << "Leur taille est respectivement " << sizeof intVect[0] << " " << sizeof intVect[1] << " et " << sizeof intVect[2] << std::endl;
 	
-		intVect.pop_back();
+		std::cout << "Calculons la moyenne" << std::endl;
 
-		for(unsigned int i = 0; i<intVect.size(); i++){
-			std::cout << intVect.at(i) << std::endl;
-		}
+		Chrono chrono1;
+		chrono1.start();
+		std::cout << mean(intVect) <<std::endl;	
+		chrono1.stop();
+		std::cout << "Time: " << chrono1.timeSpan() << " s" << std::endl;
+
+		Chrono chrono2;
+		chrono2.start();		
+		std::cout << meanCopy(intVect) <<std::endl;
+		chrono2.stop();
+		std::cout << "Time: " << chrono2.timeSpan() << " s" << std::endl;
+
+		intVect.pop_back();
 
 		std::cout << "Tout va s'effacer" << std::endl;
 
@@ -48,8 +62,6 @@ namespace TP_CPP_IMAC2
 		intVect.clear();
 
 		std::cout << intVect.size() << std::endl;
-
-		std::cout << mean(intVect) <<std::endl;
 
 		return 0;
 	}
