@@ -4,6 +4,8 @@
 #include <iostream>
 #include <math.h>
 #include <stdlib.h>
+#include <fstream>
+#include <algorithm>
 
 class VectorD
 	{
@@ -25,10 +27,16 @@ class VectorD
 		double dot(const VectorD&) const;
 		double getNorm() const;
 		void normalize();
+
+		int save(const std::string &filename) const;
+		static VectorD load(const std::string &filename);
+		VectorD operator+(const VectorD &vec) const;
 	
 	private:
 		double* m_vector;
 		size_t m_vecSize;
 	};
+
+	std::ostream& operator<<(std::ostream &stream, const VectorD &vec);
 
 #endif // __VECTOR_D_HPP__
