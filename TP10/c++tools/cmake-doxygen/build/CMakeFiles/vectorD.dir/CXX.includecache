@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/cmake-doxygen/src/VectorD.cpp
+VectorD.hpp
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/cmake-doxygen/src/VectorD.hpp
+fstream
+-
+cstdlib
+-
+algorithm
+-
+cmath
+-
+
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/cmake-doxygen/src/VectorD.hpp
+iostream
+-
+string
+-
+cmath
+-
+cstdlib
+-
+fstream
+-
+
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/cmake-doxygen/src/main.cpp
+iostream
+-
+VectorD.hpp
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/cmake-doxygen/src/VectorD.hpp
+

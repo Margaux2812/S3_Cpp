@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/margaux/Documents/S3_Cpp/TP10/cmake/src/VectorD.cpp
+VectorD.hpp
+/home/margaux/Documents/S3_Cpp/TP10/cmake/src/VectorD.hpp
+math.h
+-
+
+/home/margaux/Documents/S3_Cpp/TP10/cmake/src/VectorD.hpp
+iostream
+-
+math.h
+-
+stdlib.h
+-
+fstream
+-
+algorithm
+-
+
+/home/margaux/Documents/S3_Cpp/TP10/cmake/src/main.cpp
+iostream
+-
+math.h
+-
+stdlib.h
+-
+VectorD.hpp
+/home/margaux/Documents/S3_Cpp/TP10/cmake/src/VectorD.hpp
+fstream
+-
+

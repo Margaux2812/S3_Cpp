@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/margaux/Documents/S3_Cpp/TP10/c++tools/valgrind-debugger/src/main.cpp
+iostream
+-
+cstdlib
+-
+string
+-
+
